@@ -1,5 +1,5 @@
 # Algorithm
-studies about algorithm
+Studies About Algorithm
 
 ### Study Flow
 
@@ -12,7 +12,7 @@ studies about algorithm
 - Stack / Queue
 - Permutation, Combination, Next_permutation
 - MST ( kruskal, prim )
-- **_그래프_**
+- Graph
   - 최단경로 Dijkstra, Bellman-ford, Floyd-Warshall
   - MST (Kruskal, Prim)
     - Union-Find
