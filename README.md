@@ -1,8 +1,5 @@
 # Algorithm
 studies about algorithm
-# :chicken: Algorithm
-
----
 
 ### Study Flow
 
