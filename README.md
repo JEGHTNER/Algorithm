@@ -32,7 +32,10 @@ Studies About Algorithm
 <details>
 <summary>프로그래머스</summary>
 <div markdown="1">
-  > LV_1
+  <summary>LV_1</summary>
+  <div markdown="1">
+    짝수와 홀수
+  </div>
   
 </div>
 </details>
