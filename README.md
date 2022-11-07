@@ -29,12 +29,10 @@ Studies About Algorithm
 - Two Pointer
 
 #문제 풀이
-- 프로그래머스
 <details>
-<summary>토글 접기/펼치기</summary>
+<summary>프로그래머스</summary>
 <div markdown="1">
-
-안녕
-
+  <summary>LV_1.</summary>
+  
 </div>
 </details>
