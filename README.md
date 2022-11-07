@@ -31,7 +31,7 @@ Studies About Algorithm
 # 문제 풀이
 <details>
 <summary>프로그래머스</summary>
-<div markdown="1">
+<div markdown="2">
   <summary>LV_1</summary>
   <div markdown="1">
     짝수와 홀수
