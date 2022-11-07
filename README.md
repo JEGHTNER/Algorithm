@@ -28,11 +28,11 @@ Studies About Algorithm
 - 문자열 매칭 KMP, Trie
 - Two Pointer
 
-#문제 풀이
+# 문제 풀이
 <details>
 <summary>프로그래머스</summary>
 <div markdown="1">
-  <summary>LV_1.</summary>
+  LV_1
   
 </div>
 </details>
