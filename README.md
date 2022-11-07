@@ -32,7 +32,7 @@ Studies About Algorithm
 <details>
 <summary>프로그래머스</summary>
 <div markdown="1">
-    -LV_1
+  > LV_1
   
 </div>
 </details>
