@@ -25,6 +25,7 @@ int solution(vector<vector<int>> sizes) {
 		if (sizes[i][1] > max_r)
 			max_r = sizes[i][1];
 	}
+	
 	answer = max_r * max_l;
     return answer;
 }
