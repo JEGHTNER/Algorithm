@@ -21,8 +21,6 @@ int solution(int n) {
             }
         }
     }
-    for(int i = 0 ; i < lst.size(); i ++)
-        cout << lst[i];
     answer = count(lst.begin(),lst.end(),true);
     return answer;
 }
