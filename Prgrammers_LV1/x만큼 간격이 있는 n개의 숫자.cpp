@@ -14,7 +14,7 @@ vector<long long> solution(int x, int n) {
     return answer;
 }
 
-void printVector(vector<long long> solution)
+void printDictionary(vector<long long> solution)
 {
     for (int i = 0; i < solution.size(); i++)
     {
@@ -24,8 +24,8 @@ void printVector(vector<long long> solution)
 }
 int main()
 {
-    printVector(solution(2, 5));
-    printVector(solution(4, 3));
-    printVector(solution(-4, 2));
+    printDictionary(solution(2, 5));
+    printDictionary(solution(4, 3));
+    printDictionary(solution(-4, 2));
     
 }

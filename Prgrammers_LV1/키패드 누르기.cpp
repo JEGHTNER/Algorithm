@@ -80,7 +80,7 @@ string solution(vector<int> numbers, string hand) {
     return answer;
 }
 
-#include "printVector.cpp"
+#include "printDictionary.cpp"
 #include <iostream>
 int main()
 {

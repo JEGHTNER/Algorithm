@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include "printVector.cpp"
+#include "printDictionary.cpp"
 using namespace std;
 
 int check_stack(vector<int> *stack)
@@ -35,13 +35,13 @@ int solution(vector<vector<int>> board, vector<int> moves) {
                 if (!stack.empty() && stack.top)
                 answer += check_stack(&stack);
                 check_stack(&test);
-                printVector(test);
+                printDictionary(test);
                 board[col][moves[i] - 1] = 0;
                 break ;
             }
         }
     }
-    //printVector(stack);
+    //printDictionary(stack);
     return answer;
 }
 

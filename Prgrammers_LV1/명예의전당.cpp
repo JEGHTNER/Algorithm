@@ -27,11 +27,11 @@ vector<int> solution(int k, vector<int> score) {
 }
 
 #include<iostream>
-#include"printVector.cpp"
+#include"printDictionary.cpp"
 
 int main()
 {
     vector<int> score = {10, 100, 20, 150, 1, 100, 200};
     vector<int> answer = solution(3, score);
-    printVector(answer);
+    printDictionary(answer);
 }
