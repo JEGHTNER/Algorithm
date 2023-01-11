@@ -17,7 +17,7 @@ string solution(string new_id) {
 		if (!isalnum(new_id[i]) && strchr("-_.", new_id[i]) == NULL)
 		{
 			new_id.erase(new_id.begin() + i);
-			i = 0;
+			i = -1;
 		}
 		i++;
 	}
@@ -44,6 +44,6 @@ string solution(string new_id) {
 
 int main()
 {
-	string new_id = "abcdefghijklmn.p";
+	string new_id = "...!@BaT#*..y.abcdefghijklm";
 	cout << solution(new_id);
 }
