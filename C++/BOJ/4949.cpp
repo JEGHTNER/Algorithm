@@ -1,6 +1,5 @@
 #include<stack>
 #include<iostream>
-#include<stdio.h>
 #include<string>
 #include<map>
 using namespace std;
@@ -14,8 +13,7 @@ int main()
         string str;
         stack<char> l_stack;
         stack<char> r_stack;
-        cin>>str;
-        //scanf("%s",str);
+        getline(cin, str);
         if (str == ".")
             break;
         for (auto c : str)
@@ -25,7 +23,7 @@ int main()
             if (c == ']' || c == ')')
             {
                 r_stack.push(c);
-                if (l_stack.top() == dic[r_stack.top()])
+                if (l_stack.size() > 0 && l_stack.top() == dic[r_stack.top()])
                 {
                     l_stack.pop();
                     r_stack.pop();
