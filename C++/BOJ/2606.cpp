@@ -61,5 +61,4 @@ int main()
     }
     dfs(graph, infected);
     bfs(graph, infected);
-
 }
