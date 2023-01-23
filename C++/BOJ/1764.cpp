@@ -10,7 +10,7 @@ int main()
     int n, m;
     cin>>n>>m;
     vector<string> hear;
-    vector<string> see;
+    vector<string> ans;
 
     for (int i = 0; i < n; i++)
     {
@@ -18,15 +18,16 @@ int main()
         cin>>tmp;
         hear.push_back(tmp);
     }
+    sort(hear.begin(),hear.end());
     for (int j = 0; j < m; j++)
     {
         string tmp;
         cin>> tmp;
-        see.push_back(tmp);
+        if (binary_search(hear.begin(), hear.end(),tmp))
+            ans.push_back(tmp);
     }
-    vector<string>::iterator iter;
-    vector<string> ans;
-    iter = set_intersection(hear.begin(),hear.end(),see.begin(),see.end(),ans.begin());
+    cout<<ans.size()<<"\n";
+    sort(ans.begin(), ans.end());
     for (auto c : ans)
         cout <<c<<"\n";
 }
