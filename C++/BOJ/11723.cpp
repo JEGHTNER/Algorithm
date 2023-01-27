@@ -1,22 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-
+#include <string>
 using namespace std;
-
-vector<string> split(string input , char delimiter)
-{
-    vector<string> answer;
-    stringstream ss(input);
-    string tmp;
-
-    while(getline(ss, tmp, delimiter))
-        answer.push_back(tmp);
-    return answer;
-}
 
 int main()
 {
+    cin.tie(0);
+    ios::sync_with_stdio(0);
     int m;
     cin>>m;
     vector<pair<int, int>> lst;
@@ -25,7 +16,8 @@ int main()
     for (int i = 0; i < m; i++)
     {
         string read;
-        cin >> read;
+        int num;
+        cin>>read;
         if (read == "all")
         {
             for (int j = 0; j <= 20; j++)
@@ -36,28 +28,31 @@ int main()
             for (int j = 0; j <= 20; j++)
                 lst[j].second = 0;
         }
-        else
+        else if (read == "add")
         {
-            vector<string> command = split(read, ' ');
-            int num = stoi(command[1]);
-            if (command[0] == "add")
+            cin>>num;
+            lst[num].second = 1;
+        }
+        else if (read == "check")
+        {
+            cin>>num;
+            if (lst[num].second == 0)
+                cout << 0 <<"\n";
+            else
+                cout << 1 << "\n";
+        }
+        else if (read == "remove")
+        {
+            cin>>num;
+            lst[num].second = 0;
+        }
+        else if (read == "toggle")
+        {
+            cin>>num;
+            if (lst[num].second == 0)
                 lst[num].second = 1;
-            else if (command[0] == "check")
-            {
-                if (lst[num].second == 0)
-                    cout << 0 <<"\n";
-                else
-                    cout << 1 << "\n";
-            }
-            else if (command[0] == "remove")
+            else
                 lst[num].second = 0;
-            else if (command[0] == "toggle")
-            {
-                if (lst[num].second == 0)
-                    lst[num].second = 1;
-                else
-                    lst[num].second = 0;
-            }
         }
     }
 }
