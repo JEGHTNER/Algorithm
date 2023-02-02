@@ -37,9 +37,10 @@ int main()
     vector<vector<int>> square;
     int n;
     cin>>n;
-    vector<int> line;
+    
     for (int i = 0; i < n; i++)
     {
+        vector<int> line = {};
         for (int j = 0; j < n; j++)
         {
             int num;
