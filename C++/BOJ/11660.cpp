@@ -5,20 +5,23 @@ using namespace std;
 
 int main()
 {
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(0);
+
     int n, m;
-    cin>>n;
-    vector<vector<int>> dp(n,vector<int>(n, 0));
-    vector<vector<int>> table = {};
+    int num;
+    cin>>n>>m;
+    vector<vector<int>> dp(n + 1,vector<int>(n + 1, 0));
+    vector<vector<int>> table(n, vector<int>(n));
     for (int i = 0; i < n; i++)
     {
         vector<int> tmp = {};
         for (int j = 0; j < n; j++)
         {
-            int num;
             cin>>num;
-            tmp.push_back(num);
+            table[i][j] = num;
         }
-        table.push_back(tmp);
     }
     for (int i = 1; i <= n; i++)
     {
@@ -29,5 +32,6 @@ int main()
     {
         int x1, y1, x2, y2;
         cin>>x1>>y1>>x2>>y2;
+        cout<<dp[x2][y2] - dp[x1 -1][y2] - dp[x2][y1 -1] + dp[x1 - 1][y1 - 1]<<"\n";
     }
 }
