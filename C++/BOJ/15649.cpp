@@ -4,9 +4,10 @@
 
 using namespace std;
 
+int n, m;
 vector<int> lst;
 
-void	dfs(int n, int m)
+void	dfs()
 {
 	if (lst.size() == m)
 	{
@@ -18,17 +19,17 @@ void	dfs(int n, int m)
 	for (int i = 1; i <= n; i++)
 	{
 		if (find(lst.begin(), lst.end(), i) == lst.end())
+		{
 			lst.push_back(i);
-			dfs(n, m);
+			dfs();
 			lst.pop_back();
+		}
 	}
 
 }
 
 int main()
 {
-	int n, m;
 	cin>>n>>m;
-
-	dfs(n, m);
+	dfs();
 }
