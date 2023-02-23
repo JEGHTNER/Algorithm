@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 #include <deque>
+#include <algorithm>
 using namespace std;
 
 void dfs(vector<vector<int>> graph, vector<int> infected)
