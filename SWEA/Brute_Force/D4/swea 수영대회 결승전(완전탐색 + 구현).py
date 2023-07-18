@@ -9,46 +9,40 @@ for tc in range(1, T + 1):
         arr.append(list(map(int, input().split())))
     A, B = map(int, input().split())
     C, D = map(int, input().split())
-    visited = [[-1] * N for _ in range(N)]
-    cnt = 1
-
+    ans = 10e9
+    visited = [[0] * N for _ in range(N)]
 
     def bfs(i, j):
-        global cnt
+        global ans
+        cnt = 0
+        tornado = [2, 1, 0]
         queue = deque()
-        queue.append([i, j])
+        queue.append([i, j, 0])
         visited[i][j] = 0
         dx = [1, 0, -1, 0]
         dy = [0, 1, 0, -1]
         while queue:
-            x, y = queue.popleft()
+            x, y, now = queue.popleft()
+            visited[x][y] = now
+            if (x, y) == (C, D):
+                ans = min(ans, now)
+                continue
             for i in range(4):
                 nx = x + dx[i]
                 ny = y + dy[i]
                 if nx < 0 or ny < 0 or nx >= N or ny >= N:
                     continue
-                # if visited[nx][ny] != -1:
-                #     continue
-                cnt += 1
                 if arr[nx][ny] == 1:
                     continue
-                if arr[nx][ny] == 2:
-                    if cnt % 2 != 0:
-                        visited[nx][ny] = visited[x][y] + 3
-                    else:
-                        visited[nx][ny] = visited[x][y] + 1
-                if arr[nx][ny] == 0:
-                    if visited[nx][ny] != -1:
-                        if visited[nx][ny] > visited[x][y] + 1:
-                            visited[nx][ny] = visited[x][y] + 1
-                    else:
-                        visited[nx][ny] = visited[x][y] + 1
-                if nx == C and ny == D:
-                    return
-                queue.append([nx, ny])
+                if visited[nx][ny]:
+                    continue
+                next_time = now
+                if arr[nx][ny] == 2 and (now - 2) % 3 != 0:
+                    while (next_time - 2) % 3 != 0:
+                        next_time += 1
+                queue.append([nx, ny, next_time + 1])
 
     bfs(A, B)
     print("#", end ="")
-    print(tc, visited[C][D])
-
+    print(tc, ans)
 
