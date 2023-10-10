@@ -1,0 +1,70 @@
+import java.util.*;
+
+public class dictest2 {
+	static ArrayList<Integer> ans;
+	static HashMap<String, Integer> dic;
+	static String phrase[] = { "a b c", "aa b cc", "aaa b ccc", "aaa b cccc", "aaa b ccccc" };
+	static String msg = "KAKAO";
+//	static String msg = "TOBEORNOTTOBEORTOBEORNOT";
+//	static String msg = "ABABABABABABABAB";
+
+	public static void main(String[] args) {
+		solution(msg);
+	}
+
+	static public int[] solution(String msg) {
+		ans = new ArrayList<>();
+		dic = new HashMap<>();
+		int dicIdx = 27;
+		int len = msg.length();
+		System.out.println();
+		String alp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		for (int i = 0; i < 26; i++) {
+			dic.put(String.valueOf(alp.charAt(i)), i + 1);
+		}
+		//글자 찾기
+		
+		int msgIdx = 0;
+		while(msgIdx < len) {
+//			System.out.println("msgidx = " + msgIdx);
+			String find = String.valueOf(msg.charAt(msgIdx));
+			int findIdx = msgIdx + 1;
+//			System.out.println("find = " + find + " findIdx = " + findIdx);
+			while (dic.containsKey(find)) {
+				if (findIdx < len) {
+					find += String.valueOf(msg.charAt(findIdx++));
+				}else break;
+			}
+			String cur = null;
+			if (find.length() == 1) {
+				cur = find.substring(0, 1);
+			}else cur = find.substring(0, find.length()-1);
+//			System.out.println("cur = " + cur + " find = " + find + " dicIdx = " + dicIdx);
+			
+			//사전에 없음 => KA : 27
+			if (!dic.containsKey(find)) {
+				dic.put(find, dicIdx++);
+				ans.add(dic.get(cur));
+			}else {
+				ans.add(dic.get(find));
+				break ;
+			}
+//			System.out.println(dic);
+			msgIdx+= cur.length();
+			if (find.length()-1 == 0) msgIdx++;
+//			System.out.println(msgIdx);
+		}
+		//사전에 있으면 사전번호 출력 후 사전에 없을때까지 붙여서 사전에 추가
+		
+
+//		System.out.println(dic);
+//		System.out.println(ans);
+//		int[] answer = {};
+		int[] answer = ans
+				.stream()
+				.mapToInt(x->x)
+				.toArray();
+//		System.out.println(Arrays.toString(answer));
+		return answer;
+	}
+}
