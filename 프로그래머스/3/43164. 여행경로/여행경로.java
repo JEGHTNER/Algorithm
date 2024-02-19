@@ -1,8 +1,6 @@
 import java.util.*;
 
 class Solution {
-static Map<String, Integer> map = new HashMap<>();
-    static ArrayList<String> graph[] = new ArrayList[10001];
     static boolean[] visited;
     static ArrayList<String> answer = new ArrayList<>();
     static int size;
@@ -11,15 +9,12 @@ static Map<String, Integer> map = new HashMap<>();
         visited = new boolean[size];
 
         dfs(0, "ICN", "ICN", tickets);
-        // System.out.println(answer);
         Collections.sort(answer);
-        // System.out.println(answer);
         return answer.get(0).split(" ");
     }
 
     public void dfs(int depth, String from, String path, String[][] tickets){
         if(depth == size){
-            // System.out.println(path);
             answer.add(path);
             return ;
         }
