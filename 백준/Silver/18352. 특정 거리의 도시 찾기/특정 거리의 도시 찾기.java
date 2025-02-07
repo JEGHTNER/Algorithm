@@ -1,11 +1,9 @@
-
 import java.io.*;
 import java.util.*;
 
 public class Main {
     static int N, M, K, X;
     static ArrayList<Integer> graph[];
-    static boolean visited[];
 
     public static void dijkstra(){
         PriorityQueue<Integer> pq = new PriorityQueue<>();
@@ -44,7 +42,6 @@ public class Main {
         K = Integer.parseInt(st.nextToken());
         X = Integer.parseInt(st.nextToken());
         graph = new ArrayList[N + 1];
-        visited = new boolean[N+1];
         for(int i = 0; i <= N; i++){
             graph[i] = new ArrayList<>();
         }
